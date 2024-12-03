@@ -6,7 +6,18 @@ db = client["test_db"]
 collection = db["test_collection"]
 
 def create_random_document():
-    """Creates a random MongoDB document with a UUID field."""
+    """
+    Creates a random MongoDB document with a unique UUID field.
+
+    The generated document includes:
+        - UUID: A string representation of a version 4 UUID.
+        - name: A placeholder string "Random Name".
+        - value: An integer, e.g., 42.
+        - active: A boolean, set to True.
+
+    Returns:
+        dict: The generated document with all fields.
+    """
     document = {
         "UUID": str(uuid.uuid4()),  # Generate a version 4 UUID
         "name": "Random Name",
