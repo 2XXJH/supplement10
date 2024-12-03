@@ -20,3 +20,9 @@ def setup_and_teardown():
     collection.delete_many({})
     yield
     collection.delete_many({})
+
+def test_create_random_document():
+    document = create_random_document()
+    assert "UUID" in document
+    assert isinstance(document["UUID"], str)
+    assert len(document["UUID"]) > 0
