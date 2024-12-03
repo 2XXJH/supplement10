@@ -27,7 +27,15 @@ def create_random_document():
     return document
 
 def save_document(document):
-    """Saves a MongoDB document to the database."""
+    """
+    Saves a MongoDB document to the specified collection.
+
+    Args:
+        document (dict): The document to be inserted into the database.
+
+    Returns:
+        ObjectId: The unique ID of the inserted document.
+    """
     return collection.insert_one(document).inserted_id
 
 def find_document_by_uuid(uuid_str):
