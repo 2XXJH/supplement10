@@ -39,7 +39,15 @@ def save_document(document):
     return collection.insert_one(document).inserted_id
 
 def find_document_by_uuid(uuid_str):
-    """Finds a MongoDB document in the database by UUID."""
+    """
+    Retrieves a document from the MongoDB collection based on its UUID.
+
+    Args:
+        uuid_str (str): The UUID of the document to retrieve.
+
+    Returns:
+        dict or None: The document matching the UUID, or None if not found.
+    """
     return collection.find_one({"UUID": uuid_str})
 
 def update_document_field(uuid_str, field, value):
