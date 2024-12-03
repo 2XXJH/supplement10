@@ -55,5 +55,13 @@ def update_document_field(uuid_str, field, value):
     return collection.update_one({"UUID": uuid_str}, {"$set": {field: value}})
 
 def delete_document_by_uuid(uuid_str):
-    """Deletes a MongoDB document by UUID."""
+     """
+    Deletes a document from the MongoDB collection based on its UUID.
+
+    Args:
+        uuid_str (str): The UUID of the document to delete.
+
+    Returns:
+        DeleteResult: The result of the delete operation.
+    """
     return collection.delete_one({"UUID": uuid_str})
